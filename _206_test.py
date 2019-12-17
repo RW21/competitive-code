@@ -32,5 +32,13 @@ reverse_five.next = reverse_six
 class TestSolution(TestCase):
     def test_reverseList(self):
         solution = Solution().reverseList(head)
-        assert solution.val == reverse_head.val
-        assert solution.next.val == reverse_head.next.val
+
+        for i in range(5):
+            solution_compare = solution
+            reverse_compare = reverse_head
+
+            for j in range(i):
+                solution_compare = solution_compare.next
+                reverse_compare = reverse_compare.next
+
+            assert solution_compare.val == reverse_compare.val
