@@ -2,6 +2,7 @@ from unittest import TestCase
 
 from _206 import *
 
+
 head = ListNode(1)
 two = ListNode(2)
 three = ListNode(3)
@@ -27,7 +28,6 @@ reverse_two.next = reverse_three
 reverse_three.next = reverse_four
 reverse_four.next = reverse_five
 reverse_five.next = reverse_six
-
 
 class TestSolution(TestCase):
     def test_reverseList(self):
