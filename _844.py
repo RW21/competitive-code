@@ -1,7 +1,16 @@
-class Solution:
-    def backspaceCompare(self, S: str, T: str) -> bool:
-        S = list(S)
-        T = list(T)
+import itertools
 
-        for i in range(len(max(S, T))):
-           if i >
+
+class Solution:
+    def backspaceCompare(self, S, T):
+        def F(S):
+            skip = 0
+            for x in reversed(S):
+                if x == '#':
+                    skip += 1
+                elif skip:
+                    skip -= 1
+                else:
+                    yield x
+
+        return all(x == y for x, y in itertools.zip_longest(F(S), F(T)))
