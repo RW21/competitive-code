@@ -3,14 +3,14 @@ import itertools
 
 class Solution:
     def backspaceCompare(self, S, T):
-        def F(S):
+        def process(string):
             skip = 0
-            for x in reversed(S):
-                if x == '#':
+            for character in reversed(string):
+                if character == '#':
                     skip += 1
                 elif skip:
                     skip -= 1
                 else:
-                    yield x
+                    yield character
 
-        return all(x == y for x, y in itertools.zip_longest(F(S), F(T)))
+        return all(i == j for i, j in itertools.zip_longest(process(S), process(T)))
