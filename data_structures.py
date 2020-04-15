@@ -34,6 +34,9 @@ class ListNode:
         return string
 
 
+'''
+Binary tree
+'''
 class TreeNode:
     def __init__(self, x):
         if type(x) == list:
@@ -57,9 +60,13 @@ class TreeNode:
                         else:
                             layers[layer_depth][mapping_count // 2].right = node
 
-            self.val = layers[0][0].val
-            self.right = layers[0][0].right
-            self.left = layers[0][0].left
+            try:
+                self.val = layers[0][0].val
+                self.right = layers[0][0].right
+                self.left = layers[0][0].left
+            except IndexError as e:
+                print('Is the list filled?')
+                print(e)
 
         else:
 
@@ -76,7 +83,7 @@ class TreeNode:
     def pretty_print(self):
         this_level = [self]
         while this_level:
-            next_level = list()
+            next_level = []
             for node in this_level:
                 print(node.val, ' ', end=''),
                 if node.left:
@@ -85,6 +92,3 @@ class TreeNode:
                     next_level.append(node.right)
             print(" ")
             this_level = next_level
-
-
-TreeNode([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]).pretty_print()
