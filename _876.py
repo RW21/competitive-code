@@ -1,5 +1,5 @@
 # Definition for singly-linked list.
-from linked_list_tester import ListNode
+from data_structures import ListNode
 '''
 Given a non-empty, singly linked list with head node head, return a middle node of linked list.
 
