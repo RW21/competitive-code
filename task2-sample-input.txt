@@ -1,0 +1,55 @@
+9
+
+2 2 3
+vv
+vv
+
+3 3 3
+vvv
+v..
+v..
+
+4 4 4
+...v
+...v
+...v
+...v
+
+4 4 2
+...v
+...v
+...v
+...v
+
+4 4 2
+...v
+....
+....
+...v
+
+4 4 4
+v...
+.v..
+..v.
+...v
+
+4 4 4
+...v
+..v.
+.v..
+v...
+
+1 10 5
+vvvvvvvvvv
+
+10 10 5
+vvvvvvvvvv
+vvvvvvvvvv
+vvvvvvvvvv
+vvvvvvvvvv
+vvvvvvvvvv
+vvvvvvvvvv
+vvvvvvvvvv
+vvvvvvvvvv
+vvvvvvvvvv
+vvvvvvvvvv
