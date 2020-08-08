@@ -12,7 +12,7 @@ class NumArray:
 
 # Your NumArray object will be instantiated and called as such:
 # obj = NumArray(nums)
-# param_1 = obj.sumRange(i,j)
+# param_1 = obj.sumRange(i,sum_w)
 
 
 print(NumArray([-2,0,3,-5,2,-1]).sumRange(3,4)) 
