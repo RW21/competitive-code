@@ -1,0 +1,8 @@
+#lang racket
+
+(define s (read))
+
+(define count-substring 
+ (compose length regexp-match*))
+
+(display (count-substring "ZONEe" s))
