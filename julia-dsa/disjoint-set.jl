@@ -25,11 +25,13 @@ function link!(x::TreeNode, y::TreeNode)
 	end
 end
 
+
 function findset(x::TreeNode)::TreeNode
 	if x.parent === nothing
 		return x
 	end
-	return findset(x.parent)
+	x.parent = findset(x.parent)
+	return x.parent
 end
 
 function union!(x::TreeNode, y::TreeNode)
