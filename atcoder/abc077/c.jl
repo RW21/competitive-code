@@ -1,27 +1,10 @@
-module bs
+N = parse(Int, readline())
 
-# Alternatives
-# findfirst
-# findlast
-# searchsorted
-
-function binarysearch(arr::Vector{T}, needle::T) where T
-	low = 1
-	high = length(arr)
-	while low <= high
-		if low == high
-			return low
-		end
-		mid::Integer = (high + low) ÷ 2
-		if arr[mid] > needle
-			high = mid - 1
-		elseif arr[mid] == needle
-			return mid
-		elseif arr[mid] < needle
-			low = mid + 1
-		end
-	end
-end
+A = parse.(Int, split(readline()))
+sort!(A)
+B = parse.(Int, split(readline()))
+C = parse.(Int, split(readline()))
+sort!(C)
 
 function bisect_left(a, x, lo = 1, hi = nothing)
     if lo < 1
@@ -50,11 +33,18 @@ function bisect_right(a, x, lo = 1, hi = nothing)
     end
     return lo
 end
+
+
+
+function solve()
+	res = 0
+	for n in B
+		AB = bisect_left(A, n) - 1
+		BC = N - (bisect_right(C, n) - 1)
+		res += AB * BC
+	end
+	println(res)
 end
-
-
-a = [1,1,1]
-
-println(bs.bisect_right(a, 2))
-println(bs.bisect_left(a, 2))
+		
+solve()
 

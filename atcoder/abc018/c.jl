@@ -1,13 +1,10 @@
 R, C, K = parse.(Int, split(readline()))
 
-# board = Vector{Vector{Bool, C}, R}
 board = Array{Bool}(undef, R, C)
 function solve()
 	for i in 1:R
 		row = collect(readline())
 		row = map(c -> c == 'o', row)
-		# push!(board, row)
-		# board[i] = row
 		for c in 1:C
 			board[i, c] = row[c]
 		end
@@ -38,3 +35,4 @@ function solve()
 	println(sum(length.(findall.(board))))
 end
 solve()
+
